@@ -232,12 +232,21 @@ class PackagekitInfo(PackageInfo):
                     self._fill_package_cache(False, force)
                     return
             else:
+		import os
+		if not os.path.isfile("/var/cache/yum/i386/\$releasever/neokylin/repomd.xml"):
+                    self.warnning_network_connecting 
+		    return
                 res = self.pktask.get_packages_sync(pfilter, None, lambda prog, t, u: None, None)
                 array = res.get_package_array();
                 for pkg in array:
                     self._add_package_to_cache(pkg)
             if self._pkgs_cache:
                 self._ready = True
+    def warnning_network_connecting(self):
+        import gtk
+        md = gtk.MessageDialog(self, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("If you want use software-center, please connencting network, and restart software-center"))
+        md.run()
+        md.destroy()
 
     def is_installed(self, pkgname):
         pkgs = self._get_packages(pkgname)
@@ -484,6 +493,22 @@ class PackagekitInfo(PackageInfo):
             self._repocache[r.get_property('repo-id')] = r
 
     def _reset_cache(self, name=None):
+        # fixed package status error when _pkgs_cache not refresh.
+        pfilter = packagekit.FilterEnum.NONE
+        pfilter = 1 << pfilter
+        # we never want source packages
+        pfilter |= 1 << packagekit.FilterEnum.NOT_SOURCE
+
+        pkgs = []
+        result = self.pktask.resolve(pfilter, (name,), None, self._on_progress_changed, None)
+        pkgs = result.get_package_array()
+        for pkg in pkgs:
+            if pkg.get_name() == name:
+                self._pkgs_cache.update({name:pkg})
+
+        # cache is prepared now, we're ready
+        self._ready = True
+
         # Clean resolved packages cache
         # This is used after finishing a transaction, so that we always
         # have the latest package information

@@ -42,7 +42,7 @@ class SearchEntry(Gtk.Entry):
         """
         Gtk.Entry.__init__(self)
         self.set_width_chars(25)
-        self.set_size_request(0, em(1.7))
+        self.set_size_request(em(9), em(1.7))
 
         if not icon_theme:
             icon_theme = Gtk.IconTheme.get_default()

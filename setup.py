@@ -102,8 +102,8 @@ setup(name="software-center", version=VERSION,
                "utils/update-software-center-channels",
                "utils/update-software-center-agent",
                # generic helpers
-               "utils/expunge-cache.py",
-               ] + glob.glob("utils/piston-helpers/*.py"),
+               #"utils/expunge-cache.py",
+               ],# + glob.glob("utils/piston-helpers/*.py"),
       packages=['softwarecenter',
                 'softwarecenter.backend',
                 'softwarecenter.backend.installbackend_impl',
@@ -126,6 +126,15 @@ setup(name="software-center", version=VERSION,
                 'softwarecenter.ui.qml',
                 ],
       data_files=[
+		('share/software-center/',
+		 glob.glob("version.txt")),
+		('share/software-center/',
+		 glob.glob("AUTHORS")),
+		('share/software-center/',
+                 glob.glob("utils/piston-helpers/*.py")),
+               # generic helpers
+		('share/software-center/',
+                 glob.glob("utils/expunge-cache.py")),
                   # gtk3
                   ('share/software-center/ui/gtk3/',
                    glob.glob("data/ui/gtk3/*.ui")),
@@ -146,15 +155,29 @@ setup(name="software-center", version=VERSION,
                    glob.glob("data/images/*.gif")),
                   ('share/software-center/icons/',
                    glob.glob("data/emblems/*.png")),
+                  # desktop
+                  ('share/applications',
+                   glob.glob("data/software-center.desktop")),
+                  # titlebar icons
+                  ('share/icons/navigate',
+                   glob.glob("data/icons/navigate/*.png")),
+                  # desktop icons
+                  ('share/pixmaps',
+                   glob.glob("data/softwarecenter.png")),
                   # xapian
                   ('share/apt-xapian-index/plugins',
                    glob.glob("apt-xapian-index-plugin/*.py")),
+                  # xapian
+                  ('../var/cache/software-center/xapian/',
+                   glob.glob("xapian/*")),
                   # apport
-                  ('share/apport/package-hooks/',
-                   ['debian/source_software-center.py']),
+                  #('share/apport/package-hooks/',
+                  # ['debian/source_software-center.py']),
                   # extra software channels (can be distro specific)
                   ('/usr/share/app-install/channels/',
                    glob.glob("data/channels/%s/*" % DISTRO)),
+                  ('/usr/share/app-install/channels/',
+		   glob.glob("data/channels/Ubuntu/ubuntu-extras.list.in")),
                   ],
       cmdclass={"build": build_extra.build_extra,
                 "build_i18n": build_i18n.build_i18n,

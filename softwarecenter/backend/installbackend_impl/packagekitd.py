@@ -289,8 +289,10 @@ class PackagekitBackend(GObject.GObject, InstallBackend):
         # FIXME we set the only_trusted flag, which will prevent
         # PackageKit from installing untrusted packages
         # (in general, all enabled repos should have GPG signatures,
+        pkclient = packagekit.Client()
         # which is enough for being marked "trusted", but still)
-        self.pktask.install_packages_async(#True,  # only trusted
+        #self.pktask.install_packages_async(#True,  # only trusted
+        pkclient.install_packages_async(False,  # only trusted
                     pkgnames,
                     None,  # cancellable
                     self._on_progress_changed,

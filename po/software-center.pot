@@ -2292,3 +2292,9 @@ msgstr ""
 #: ../utils/submit_usefulness_gtk3.py:211
 msgid "Missing review-id argument"
 msgstr ""
+
+msgid "Network Disconnect"
+msgstr ""
+
+msgid "If you want to use software-center, please connect to internet."
+msgstr ""

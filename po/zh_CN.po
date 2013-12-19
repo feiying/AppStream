@@ -191,6 +191,12 @@ msgstr "删除"
 msgid "Install"
 msgstr "安装"
 
+msgid "Our star apps"
+msgstr "我们的明星程序"
+
+#: ../softwarecenter/ui/gtk3/widgets/exhibits.py:94
+msgid "Come and explore our favourites"
+msgstr "点击可获取最受欢迎的程序"
 #. FIXME: deal with the EULA stuff
 #: ../softwarecenter/view/appdetailsview.py:442
 msgid "Enable channel"
@@ -253,6 +259,51 @@ msgstr "依赖"
 #: ../softwarecenter/view/viewswitcher.py:130
 msgid "Installed Software"
 msgstr "已安装的软件"
+
+msgid "Installed"
+msgstr "已安装"
+
+msgid "All Software"
+msgstr "所有软件"
+
+msgid "History"
+msgstr "历史记录"
+
+msgid "Progress"
+msgstr "刷新"
+
+msgid "Today"
+msgstr "今天"
+
+msgid "Top Rated"
+msgstr "最受好评"
+
+msgid "More Info"
+msgstr "更多信息"
+
+msgid "More"
+msgstr "更多"
+
+msgid "All Changes"
+msgstr "所有变化"
+
+msgid "Installations"
+msgstr "安装"
+
+msgid "Updates"
+msgstr "更新"
+
+msgid "Removals"
+msgstr "删除"
+
+msgid "Loading history"
+msgstr "加载历史"
+
+msgid "Provided by Neokylin"
+msgstr "提供自Neokylin"
+
+msgid "Unknown repository"
+msgstr "未知仓库"
 
 #: ../softwarecenter/view/installedpane.py:131
 #, python-format
@@ -349,16 +400,137 @@ msgstr "让你从数千种适合 Ubuntu 使用的、自由的程序中，进行�
 msgid "Software Center"
 msgstr "软件中心"
 
+msgid "By Name"
+msgstr "名称排序"
+
+#: ../softwarecenter/ui/gtk3/views/appview.py:140
+msgid "By Top Rated"
+msgstr "最流行排序"
+
+#: ../softwarecenter/ui/gtk3/views/appview.py:141
+msgid "By Newest First"
+msgstr "最新排列"
+
+#: ../data/software-center.menu.in.h:7
+msgid "IDEs"
+msgstr "集成开发环境"
+
+#: ../data/software-center.menu.in.h:8
+msgid "Java"
+msgstr "Java"
+
+msgid "Debugging"
+msgstr "调试"
+
+msgid "Graphic Interface Design"
+msgstr "图形界面开发"
+
+msgid "Localization"
+msgstr "语言"
+
+msgid "Profiling"
+msgstr "建模"
+
+msgid "Version Control"
+msgstr "版本控制"
+
+msgid "Web Development"
+msgstr "网页开发"
+
+msgid "Chat"
+msgstr "聊天"
+
+msgid "File Sharing"
+msgstr "文件共享"
+
+msgid "Mail"
+msgstr "邮件"
+
+msgid "Web Browsers"
+msgstr "网页浏览器"
+
+msgid "Astronomy"
+msgstr "天文学"
+
+msgid "Biology"
+msgstr "生物学"
+
+msgid "Chemistry"
+msgstr "化学"
+
+msgid "Computer Science &amp; Robotics"
+msgstr "计算机科学与技术"
+
+msgid "Electronics"
+msgstr "电子学"
+
+msgid "Engineering"
+msgstr "工程学"
+
+msgid "Geography"
+msgstr "地理学"
+
+msgid "Geology"
+msgstr "地质学"
+
+msgid "Mathematics"
+msgstr "数学"
+
+msgid "Physics"
+msgstr "物理学"
+
+msgid "3D Graphics"
+msgstr "3D 图形"
+
+msgid "Drawing"
+msgstr "制图"
+
+msgid "Painting &amp; Editing"
+msgstr "画图及编辑"
+
+msgid "Photography"
+msgstr "摄影"
+
+msgid "Publishing"
+msgstr "发布"
+
+msgid "Scanning &amp; OCR"
+msgstr "扫描和光学识别"
+
+msgid "Viewers"
+msgstr "阅读器"
+
+msgid "Arcade"
+msgstr "拱廊游戏"
+
+msgid "Board Games"
+msgstr "棋盘游戏"
+
+msgid "Card Games"
+msgstr "纸牌游戏"
+
+msgid "Puzzles"
+msgstr "拼图游戏"
+
+msgid "Role Playing"
+msgstr "角色扮演"
+
+msgid "Simulation"
+msgstr "模拟游戏"
+
+msgid "Sports"
+msgstr "竞技游戏"
+
 #, python-format
-#~ msgid "%s items available"
-#~ msgstr "共有 %s 项可用"
+msgid "%s items available"
+msgstr "共有 %s 项可用"
 
 #, python-format
 #~ msgid "Search in %s"
 #~ msgstr "在 %s 中查找"
 
-#~ msgid "All"
-#~ msgstr "全部"
+msgid "All"
+msgstr "全部"
 
 #~ msgid "Get Free software"
 #~ msgstr "获取自由软件"
@@ -391,3 +563,14 @@ msgstr "软件中心"
 
 #~ msgid "Ubuntu Software Store"
 #~ msgstr "Ubuntu 软件商店"
+
+msgid "%(amount)s item"
+msgid_plural "%(amount)s items"
+msgstr[0] "%(amount)s 项"
+msgstr[1] "%(amount)s 项"
+
+msgid "Network Disconnect"
+msgstr "网络断开"
+
+msgid "If you want to use software-center, please connect to internet."
+msgstr "如果要正常使用软件中心，请连接网络."

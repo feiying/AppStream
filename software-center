@@ -25,6 +25,7 @@ time_entering_main = time.time()
 from gi.repository import Gtk, GObject
 
 import gettext
+from gettext import gettext as _
 import glob
 import logging
 import os
@@ -41,6 +42,8 @@ import softwarecenter.log
 import softwarecenter.paths
 
 from optparse import OptionParser
+from softwarecenter.netstatus import network_state_is_connected
+#import gtk
 
 # Enable Xapian's CJK tokenizer (see LP: #745243)
 os.environ['XAPIAN_CJK_NGRAM'] = '1'
@@ -84,6 +87,19 @@ if __name__ == "__main__":
                       default=False)
 
     (options, args) = parser.parse_args()
+
+    # checking network connection.
+    #is_connected = network_state_is_connected()
+    from softwarecenter.netstatus import test_ping
+    res = test_ping()
+    if res:
+        print "### network connected"
+        os.system('pkcon refresh') 
+    else:    
+        print "### network disconnected"
+        from softwarecenter.ui.gtk3.dialogs import messagedialog
+        messagedialog(title=_("Network Disconnect"), primary=_("If you want to use software-center, please connect to internet."))
+        exit()
 
     # statup time measure implies "performance" in debug filters
     if options.measure_startup_time:

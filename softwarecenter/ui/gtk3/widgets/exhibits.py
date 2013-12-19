@@ -48,7 +48,7 @@ EXHIBIT_HTML = """
 font-family:Ubuntu;
 font-size:48px;
 font-weight:bold;
-color:#DD4814;
+color:#000000;
 padding: 0.2em;
 position:absolute;
 top:40px;
@@ -58,7 +58,7 @@ white-space: nowrap;
 .banner_subtext {
 font-family:Ubuntu;
 font-size:28px;
-color:#DD4814;
+color:#000000;
 padding: 0.4em;
 position:absolute;
 top:100px;

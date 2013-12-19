@@ -157,7 +157,10 @@ def test_ping():
 
     __WATCHER__.emit("changed", NETWORK_STATE)
     logging.info("ping output: '%s'" % msg)
-    return
+    if len(error.splitlines()):
+        return False
+    else:
+        return True
 
 # global watcher
 __WATCHER__ = NetworkStatusWatcher()
